@@ -1,7 +1,7 @@
 # NeuroD_Bot
 ## TCC Escola da Nuvem - Chatbot IA
 
-| **Data de lançamento** | 31 de março de 2025  | 
+| **Data de lançamento** | 6 de abril de 2025  | 
 |--------|------------|
 | **Descrição do projeto** | Desenvolver chatbot com Inteligente Artificial com Python e Amazon Bedrock, auxiliando pessoas com Transtorno de Déficit de Atenção e Hiperatividade e Transtorno do Espectro Autista, dando dicas de organização, bem estar emocional, sensorial e diferentes técnicas para variados cenários   | 
 | **Lider técnico** | Gustavo Passos |
@@ -110,6 +110,7 @@ O chatbot deve ser capaz de:
 - **IAM:** Garante a segurança da aplicação, controlando quem acessa quais recursos da AWS e com quais permissões.
 - **Route 53:** Direciona o tráfego de internet para a aplicação, atuando como um DNS inteligente, otimizando a rota para o usuário.
 - **CloudFront:** Acelera a entrega de conteúdo estático da aplicação, como imagens e scripts, para os usuários, melhorando a performance.
+- **AWS Lambda:** Executa códigos python necessários via back-end 
 - **Lex:** Permite criar interfaces de conversação, como chatbots, para interagir com os usuários de forma natural e intuitiva.
 - **DynamoDB:** Armazena dados de forma flexível e escalável, como informações dos usuários e suas interações com o chatbot.
 - **S3:** Armazena arquivos de diversos tipos, como modelos de linguagem, resultados de análises e outros dados necessários para a aplicação.
@@ -118,7 +119,6 @@ O chatbot deve ser capaz de:
 
 ## 📌 Backlog | Melhorias
 
-- Criar interface amigável para o usuário (web ou mobile).
 - Aperfeiçoar a precisão do chatbot para lidar com perguntas complexas ou não relacionadas.
 - Ajustar a interface para fornecer feedback em tempo real sobre erros de entrada do usuário.
 - Expandir as categorias de recomendações para incluir dietas ou hábitos saudáveis.
