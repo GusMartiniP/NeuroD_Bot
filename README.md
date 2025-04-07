@@ -50,10 +50,11 @@ O chatbot deve ser capaz de:
 
 - Serviço LEX - Serviço AWS que fornece a função de ChatBot;
 - Serviço Via Back-end → Python, para estruturação e criação dos mecanismos internos de input/output da IA; uso de API; 
-- Armazenamento e Segurança na infraestrutura AWS; 
+- Armazenamento e Segurança na infraestrutura AWS;
+- Serviço CloudFront - Trabalha com otimização de entrega de conteúdo para usuário final, reduzindo latência e introduzindo segurança à aplicação web através do AWS WAF e Shield Standard, que são configurados juntos dele.
 - Serviço AWS Lambda e DynamoDB - Para registrar interações, armazenar e melhorar o output de acordo com as informações do usuário X base de treinamento da IA;
 - Serviço Amazon S3 e Bedrock, Integração dos dados que a IA utilizará e hospedagem do web app;
-- Serviço OpenSearch.
+- Serviço OpenSearch, que irá osquestrar toda a comunicação da documentação do Bot no S3 e retornar de forma eficaz e rápida um resultado preciso.
 
 
 ### **Requisitos Não Funcionais**
@@ -109,7 +110,7 @@ O chatbot deve ser capaz de:
 
 - **IAM:** Garante a segurança da aplicação, controlando quem acessa quais recursos da AWS e com quais permissões.
 - **Route 53:** Direciona o tráfego de internet para a aplicação, atuando como um DNS inteligente, otimizando a rota para o usuário.
-- **CloudFront:** Acelera a entrega de conteúdo estático da aplicação, como imagens e scripts, para os usuários, melhorando a performance.
+- **CloudFront:** Acelera a entrega de conteúdo estático da aplicação, como imagens e scripts, para os usuários, melhorando a performance e assegurando a aplicação com Shield Standard e WAF.
 - **AWS Lambda:** Executa códigos python necessários via back-end 
 - **Lex:** Permite criar interfaces de conversação, como chatbots, para interagir com os usuários de forma natural e intuitiva.
 - **DynamoDB:** Armazena dados de forma flexível e escalável, como informações dos usuários e suas interações com o chatbot.
