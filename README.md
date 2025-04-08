@@ -7,7 +7,7 @@
 | **Status do documento** | Concluído |
 | **Lider técnico** | Gustavo Passos |
 | **Scrum Masters** | Isabéli Januário |
-| **Equipe de desenvolvedores** | Python/- Walbens Charles, Mariana Rouxinol, Aline Conchetta | 
+| **Equipe de desenvolvedores** | Python - Walbens Charles, Mariana Rouxinol, Aline Conchetta | 
 | **Equipe de Infraestrutura nuvem AWS** | Mariana Rouxinol|
 
 
