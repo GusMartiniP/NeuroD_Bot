@@ -1,13 +1,14 @@
 # NeuroD_Bot
 ## TCC Escola da Nuvem - Chatbot IA
 
-| **Data de lançamento** | 6 de abril de 2025  | 
+| **Meta de lançamento** | 6 de abril de 2025  | 
 |--------|------------|
-| **Descrição do projeto** | Desenvolver chatbot com Inteligente Artificial com Python e Amazon Bedrock, auxiliando pessoas com Transtorno de Déficit de Atenção e Hiperatividade e Transtorno do Espectro Autista, dando dicas de organização, bem estar emocional, sensorial e diferentes técnicas para variados cenários   | 
+| **Épico** | Desenvolver chatbot com Inteligente Artificial com Python e Amazon Bedrock, auxiliando pessoas com Transtorno de Déficit de Atenção e Hiperatividade e Transtorno do Espectro Autista, dando dicas de organização, bem estar emocional, sensorial e diferentes técnicas para variados cenários| 
+| **Status do documento** | Concluído |
 | **Lider técnico** | Gustavo Passos |
-| **Scrum Masters** | Mariana Rouxinol; Aline Conchetta |
-| **Equipe de desenvolvedores** | Python/Backend - Walbens Charles, Mariana Rouxinol, Aline Conchetta | 
-| **Equipe de Infraestrutura nuvem AWS** | Gustavo Passos, Isabéli Januário |
+| **Scrum Masters** | Isabéli Januário |
+| **Equipe de desenvolvedores** | Python/- Walbens Charles, Mariana Rouxinol, Aline Conchetta | 
+| **Equipe de Infraestrutura nuvem AWS** | Mariana Rouxinol|
 
 
 🎯 Objetivos:
@@ -49,27 +50,27 @@ O chatbot deve ser capaz de:
 ### **Requisitos Funcionais**
 
 - Serviço LEX - Serviço AWS que fornece a função de ChatBot;
-- Serviço Via Back-end → Python, para estruturação e criação dos mecanismos internos de input/output da IA; uso de API; 
-- Armazenamento e Segurança na infraestrutura AWS;
-- Serviço CloudFront - Trabalha com otimização de entrega de conteúdo para usuário final, reduzindo latência e introduzindo segurança à aplicação web através do AWS WAF e Shield Standard, que são configurados juntos dele.
-- Serviço AWS Lambda e DynamoDB - Para registrar interações, armazenar e melhorar o output de acordo com as informações do usuário X base de treinamento da IA;
-- Serviço Amazon S3 e Bedrock, Integração dos dados que a IA utilizará e hospedagem do web app;
-- Serviço OpenSearch, que irá osquestrar toda a comunicação da documentação do Bot no S3 e retornar de forma eficaz e rápida um resultado preciso.
+- Serviço Via Back-end → Python
+- Armazenamento e Personalização de dados com dynamoDB
+- Processamento de áudio para interação por voz - integração com amazon transcribe
+- Armazenamento e integração de arquivos com s3
+- Serviço OpenSearch para busca inteligente
+- Processamento inteligente de linguagem natural com Amazon Bedrock com geração de respostas rápidas e personalizadas
 
 
 ### **Requisitos Não Funcionais**
 
 **Desempenho**:
 
-- O chatbot deve ser responsivo, com tempo de resposta rápido para as interações do usuário.
+- O chatbot deve ser responsivo, com tempo de resposta rápido para as interações do usuário. A aplicação deve garantir que as interações ocorram sem atraso perceptível, proporcionando uma experiência fluida ao usuário.
 
 **Linguagem utilizada e Bibliotecas:**
 
 - A linguagem utilizada será Python;
-- Será utilizada a biblioteca Boto3 para interagir com os serviços da AWS e automatizar tarefas, como provisionar recursos e gerenciar dados. 
+- Utilização da biblioteca Boto3 para comunicação eficiente com os serviços AWS, permitindo manipulação de recursos de forma programática.. 
 **Uso de um serviço de Inteligência Artificial para processamento e resposta:**
 
-- Utilização do serviço Amazon Bedrock para geração das respostas personalizadas com base na documentação fornecida pelo Amazon S3;
+- Utilização do serviço Amazon Bedrock para geração das respostas personalizadas com base na documentação fornecida;
 
 ## 📖 Histórias de Usuário
 
@@ -108,22 +109,23 @@ O chatbot deve ser capaz de:
 
 ### Serviços Utilizados e suas Funcionalidades
 
-- **IAM:** Garante a segurança da aplicação, controlando quem acessa quais recursos da AWS e com quais permissões.
-- **Route 53:** Direciona o tráfego de internet para a aplicação, atuando como um DNS inteligente, otimizando a rota para o usuário.
-- **CloudFront:** Acelera a entrega de conteúdo estático da aplicação, como imagens e scripts, para os usuários, melhorando a performance e assegurando a aplicação com Shield Standard e WAF.
-- **AWS Lambda:** Executa códigos python necessários via back-end 
-- **Lex:** Permite criar interfaces de conversação, como chatbots, para interagir com os usuários de forma natural e intuitiva.
-- **DynamoDB:** Armazena dados de forma flexível e escalável, como informações dos usuários e suas interações com o chatbot.
-- **S3:** Armazena arquivos de diversos tipos, como modelos de linguagem, resultados de análises e outros dados necessários para a aplicação.
-- **OpenSearch:** Permite realizar buscas eficientes em grandes volumes de dados, como encontrar exercícios específicos ou informações relevantes para o usuário.
-- **Bedrock:** Gera conteúdo personalizado, como texto, código e imagens, tornando as respostas do chatbot mais relevantes e personalizadas.
+**IAM**: Garante a segurança da aplicação, controlando quem acessa quais recursos da AWS e com quais permissões.
+**Route 53**: Direciona o tráfego de internet para a aplicação, atuando como um DNS inteligente, otimizando a rota para o usuário.
+**CloudFront**: Acelera a entrega de conteúdo estático da aplicação, como imagens e scripts, para os usuários, melhorando a performance.
+**AWS Lambda**: Utilizado para executar os códigos python da aplicação, usando a biblioteca Boto3 para interagir com os serviços do Bedrock e Lex.
+**Amazon Transcribe**: Conversão de áudio para texto, permitindo interações faladas.
+**Lex**: Permite criar interfaces de conversação, como chatbots, para interagir com os usuários de forma natural e intuitiva.
+**Cognito**: É utilizado para gerenciar autenticação, permitindo que usuários acessem o chatbot com segurança.
+**DynamoDB**: Armazena dados de forma flexível e escalável, como informações dos usuários e suas interações com o chatbot.
+**S3**: Armazena arquivos de diversos tipos, como modelos de linguagem, resultados de análises e outros dados necessários para a aplicação.
+**OpenSearch**: Permite realizar buscas eficientes em grandes volumes de dados, como encontrar exercícios específicos ou informações relevantes para o usuário.
+**Bedrock**: Gera conteúdo personalizado, como texto, código e imagens, tornando as respostas do chatbot mais relevantes e personalizadas.
 
 ## 📌 Backlog | Melhorias
 
-- Aperfeiçoar a precisão do chatbot para lidar com perguntas complexas ou não relacionadas.
-- Ajustar a interface para fornecer feedback em tempo real sobre erros de entrada do usuário.
-- Expandir as categorias de recomendações para incluir dietas ou hábitos saudáveis.
-- Reduzir tempo de resposta das interações para menos de 5 segundos.
-- Incluir suporte para múltiplos idiomas.
-- Integrar métricas de uso para análise de dados e otimização do modelo.
-- Incluir acessibilidade para que o texto gerado seja também audível.
+- Amazon CloudWatch: Para monitorar desempenho, uso da aplicação e tempo de resposta.
+- Amazon Connect: Canal direto de suporte ou interação com usuários.
+- Amazon SES: Para coletar feedback por e-mail.
+- Amazon Translate: Para oferecer suporte a diversos idiomas e melhorar a acessibilidade.
+- AWS Auto Scaling: Para garantir que sua aplicação possa lidar com mais usuários sem perder desempenho.
+- Amazon ElastiCache: Para armazenar respostas frequentes e evitar chamadas repetidas ao Bedrock, melhorando o tempo de resposta.
